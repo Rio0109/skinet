@@ -5,10 +5,6 @@ C:\Users\ivanr\skinet\API\bin\Debug\net8.0\API.deps.json
 C:\Users\ivanr\skinet\API\bin\Debug\net8.0\API.runtimeconfig.json
 C:\Users\ivanr\skinet\API\bin\Debug\net8.0\API.dll
 C:\Users\ivanr\skinet\API\bin\Debug\net8.0\API.pdb
-C:\Users\ivanr\skinet\API\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\ivanr\skinet\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\ivanr\skinet\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\ivanr\skinet\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\ivanr\skinet\API\bin\Debug\net8.0\Core.dll
 C:\Users\ivanr\skinet\API\bin\Debug\net8.0\Infrastructure.dll
 C:\Users\ivanr\skinet\API\bin\Debug\net8.0\Infrastructure.pdb
@@ -18,7 +14,6 @@ C:\Users\ivanr\skinet\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.edit
 C:\Users\ivanr\skinet\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
 C:\Users\ivanr\skinet\API\obj\Debug\net8.0\API.AssemblyInfo.cs
 C:\Users\ivanr\skinet\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
-C:\Users\ivanr\skinet\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ivanr\skinet\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ivanr\skinet\API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\ivanr\skinet\API\obj\Debug\net8.0\staticwebassets.development.json
@@ -34,3 +29,4 @@ C:\Users\ivanr\skinet\API\obj\Debug\net8.0\refint\API.dll
 C:\Users\ivanr\skinet\API\obj\Debug\net8.0\API.pdb
 C:\Users\ivanr\skinet\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\Users\ivanr\skinet\API\obj\Debug\net8.0\ref\API.dll
+C:\Users\ivanr\skinet\API\obj\Debug\net8.0\API.sourcelink.json
