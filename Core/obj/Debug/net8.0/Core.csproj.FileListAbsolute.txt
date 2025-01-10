@@ -11,3 +11,5 @@ C:\Users\ivanr\skinet\Core\obj\Debug\net8.0\Core.pdb
 C:\Users\ivanr\skinet\Core\obj\Debug\net8.0\ref\Core.dll
 C:\Users\ivanr\skinet\Core\obj\Debug\net8.0\Core.sourcelink.json
 C:\Users\ivanr\skinet\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
+C:\Users\ivanr\skinet\Core\bin\Debug\net8.0\Core.runtimeconfig.json
+C:\Users\ivanr\skinet\Core\obj\Debug\net8.0\Core.genruntimeconfig.cache

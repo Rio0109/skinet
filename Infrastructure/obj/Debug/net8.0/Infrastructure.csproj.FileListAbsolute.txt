@@ -14,3 +14,5 @@ C:\Users\ivanr\skinet\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
 C:\Users\ivanr\skinet\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\Users\ivanr\skinet\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
 C:\Users\ivanr\skinet\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+C:\Users\ivanr\skinet\Infrastructure\bin\Debug\net8.0\Infrastructure.runtimeconfig.json
+C:\Users\ivanr\skinet\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
