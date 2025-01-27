@@ -22,9 +22,9 @@ public class ProductRepository(StoreContext context) : IProductRepository
     {
         return  await context.Products.ToListAsync();
     }
-    public Task<Product?> GetProductByIdAsync(int id)
+    public async Task<Product?> GetProductByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await context.Products.FindAsync(id);
     }
     public bool ProductExists(int id)
     {
