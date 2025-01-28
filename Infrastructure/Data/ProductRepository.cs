@@ -14,18 +14,51 @@ public class ProductRepository(StoreContext context) : IProductRepository
     {
         context.Products.Remove(product);
     }
+
+    public async Task<IReadOnlyList<string>> GetBrandsAsync()
+    {
+        return await context.Products.Select(X => X.Brand)
+        .Distinct()
+        .ToListAsync();
+    }
+        public async Task<Product?> GetProductByIdAsync(int id)
+    {
+        return await context.Products.FindAsync(id);
+    }
+
     public async Task<Product?> GetProductAsync(int id)
     {
         return await context.Products.FindAsync(id);
     }
-    public async Task<IReadOnlyList<Product>> GetProductAsync()
+    public async Task<IReadOnlyList<Product>> GetProductsAsync(string? brand, string?
+     type, string? sort)
     {
-        return  await context.Products.ToListAsync();
+    var query = context.Products.AsQueryable();
+    if (!string.IsNullOrWhiteSpace(brand))
+        query = query.Where(x => x.Brand == brand);
+
+    if (!string.IsNullOrWhiteSpace(type))    
+        query = query.Where(x => x.Type == type);
+
+
+        query = sort switch
+        {
+            "priceAsc" => query.OrderBy( x=> x.Price),
+            "priceDesc" => query.OrderByDescending(x => x.Price),
+            _ => query.OrderBy(x => x.Name)
+        };
+
+    return  await query.ToListAsync();
     }
-    public async Task<Product?> GetProductByIdAsync(int id)
+
+
+    public async Task<IReadOnlyList<string>> GetTypesAsync()
     {
-        return await context.Products.FindAsync(id);
+ return await context.Products.Select(X => X.Type)
+        .Distinct()
+        .ToListAsync();
     }
+
     public bool ProductExists(int id)
     {
         return context.Products.Any(x => x.Id == id);
@@ -39,4 +72,6 @@ public class ProductRepository(StoreContext context) : IProductRepository
     {
         context.Entry(product).State = EntityState.Modified;
     }
+
+
 }
