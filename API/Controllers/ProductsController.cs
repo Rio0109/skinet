@@ -1,3 +1,4 @@
+using API.RequestHelpers;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
@@ -7,8 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
+
 public class ProductsController(IGenericRepository<Product> repo) : ControllerBase
 {
     [HttpGet]
@@ -18,8 +18,12 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
         var spec = new ProductSpecification(specParmas);
 
         var products = await repo.ListAsync(spec);
+        var count = await repo.CountAsync(spec);
 
-        return Ok(products);
+        var pagination = new Pagination<Product>(specParmas.PageIndex,
+        specParmas.PageSize, count, products);
+
+        return Ok(pagination);
    } 
 
    [HttpGet("{id:int}")] // api/products/2

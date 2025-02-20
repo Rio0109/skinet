@@ -2,6 +2,7 @@ using Core.Interfaces;
 using Core.Entities;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 namespace Infrastructure;
 
@@ -10,6 +11,15 @@ public class GenericRepository<T>(StoreContext context) : IGenericRepository<T> 
     public void Add(T entity)
     {
         context.Set<T>().Add(entity);
+    }
+
+    public async Task<int> CountAsync(ISpecification<T> spec)
+    {
+        var query = context.Set<T>().AsQueryable();
+
+        query = spec.ApplyCriteria(query);
+        
+        return await query.CountAsync();
     }
 
     public bool Exists(int id)
