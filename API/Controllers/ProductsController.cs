@@ -8,11 +8,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-
+[ApiController]
+[Route("api/[controller]")]
 public class ProductsController(IGenericRepository<Product> repo) : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<IReadOnlyList<Product>>>GetProducts([FromQuery]ProductSpecParmas specParmas)
+    public async Task<ActionResult<IReadOnlyList<Product>>>GetProducts(
+        [FromQuery]ProductSpecParmas specParmas)
    {
 
         var spec = new ProductSpecification(specParmas);
@@ -20,8 +22,8 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
         var products = await repo.ListAsync(spec);
         var count = await repo.CountAsync(spec);
 
-        var pagination = new Pagination<Product>(specParmas.PageIndex,
-        specParmas.PageSize, count, products);
+        var pagination = new Pagination<Product>(specParmas.PageIndex, specParmas.PageSize, 
+        count, products);
 
         return Ok(pagination);
    } 
