@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[ApiExplorerSettings(IgnoreApi = true)]
+[Route("[controller]")] // GET https://localhost:5001/WeatherForecast
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
